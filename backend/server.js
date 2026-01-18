@@ -1,6 +1,6 @@
 require('dotenv').config();
 const app = require('./src/app.js'); // make sure path is correct
-const connectDB = require('../backend/src/config/database.js'); // adjust path if needed
+const connectDB = require('./src/config/database.js'); // Updated path for Vercel compatibility
 
 const PORT = process.env.PORT || 5000;
 

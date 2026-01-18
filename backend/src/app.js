@@ -40,7 +40,8 @@ const corsOptions = {
     'http://localhost:3000',
     'http://localhost:5173',
     'http://127.0.0.1:3000',
-    'http://127.0.0.1:5173'
+    'http://127.0.0.1:5173',
+    'https://gmac41.netlify.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
@@ -62,6 +63,14 @@ if (process.env.NODE_ENV === 'development') {
 } else {
   app.use(morgan('combined'));
 }
+
+// Root route
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: 'GMAC Attendance System API is live!',
+    documentation: '/api/health'
+  });
+});
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
