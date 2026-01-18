@@ -42,13 +42,22 @@ function MarkAttendance() {
       if (response.data && response.data.data) {
         const allStudents = response.data.data;
 
-        // Filter students by subject
+        if (allStudents.length === 0) {
+          toast(`No active students found in ${classLevel} - ${group}`, { icon: 'ℹ️' })
+          setStudents([])
+          setShowStudentList(false)
+          setLoading(false)
+          return
+        }
+
+        // Filter students by subject (case-insensitive and trimmed)
+        const searchSubject = subject.trim().toLowerCase();
         const filteredStudents = allStudents.filter(s =>
-          s.subjects && s.subjects.includes(subject)
+          s.subjects && s.subjects.some(sub => sub.trim().toLowerCase() === searchSubject)
         )
 
         if (filteredStudents.length === 0) {
-          toast('No students found with this subject in the selected class', { icon: '⚠️' })
+          toast(`Found ${allStudents.length} students in this class, but none are enrolled in "${subject}"`, { icon: '⚠️' })
           setStudents([])
           setShowStudentList(false)
         } else {
@@ -60,6 +69,7 @@ function MarkAttendance() {
           })
           setAttendanceMap(initialMap)
           setShowStudentList(true)
+          toast.success(`Found ${filteredStudents.length} students`)
         }
       }
     } catch (error) {
