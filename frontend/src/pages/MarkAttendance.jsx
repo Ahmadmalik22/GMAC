@@ -231,17 +231,17 @@ function MarkAttendance() {
               <p className="text-sm text-blue-600 mb-4">
                 Enter Roll Numbers of absent students (comma separated) to automatically mark them Absent and everyone else Present.
               </p>
-              <form onSubmit={handleQuickMark} className="flex gap-4">
+              <form onSubmit={handleQuickMark} className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="text"
                   value={absentRolls}
                   onChange={(e) => setAbsentRolls(e.target.value)}
                   placeholder="e.g. 11-FSC-001, 11-FSC-005"
-                  className="flex-1 border border-blue-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+                  className="w-full border border-blue-300 rounded-lg px-4 py-3 sm:py-2 focus:ring-2 focus:ring-blue-500 outline-none text-base"
                 />
                 <button
                   type="submit"
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-medium whitespace-nowrap"
+                  className="bg-blue-600 text-white px-6 py-3 sm:py-2 rounded-lg hover:bg-blue-700 transition font-bold sm:font-medium whitespace-nowrap shadow-md active:scale-95"
                 >
                   Auto Fill
                 </button>
@@ -257,37 +257,38 @@ function MarkAttendance() {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Roll No</th>
-                      <th className="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Name</th>
-                      <th className="px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase">Status</th>
+                      <th className="px-3 sm:px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Roll No</th>
+                      <th className="px-3 sm:px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase">Name</th>
+                      <th className="px-3 sm:px-6 py-3 text-center text-xs font-bold text-gray-500 uppercase">Status</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {students.map((student) => (
                       <tr key={student._id} className="hover:bg-gray-50">
-                        <td className="px-6 py-4 text-sm font-medium text-gray-900">{student.rollNo}</td>
-                        <td className="px-6 py-4 text-sm text-gray-900">
-                          <div className="flex items-center gap-2">
-                            <span>{student.name}</span>
+                        <td className="px-3 sm:px-6 py-4 text-sm font-medium text-gray-900">{student.rollNo}</td>
+                        <td className="px-3 sm:px-6 py-4 text-sm text-gray-900">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                            <span className="font-semibold sm:font-normal">{student.name}</span>
                             {student.status === 'struck-off' && (
-                              <span className="text-[9px] font-black bg-rose-500 text-white px-1.5 rounded-full uppercase leading-tight">Struck Off</span>
+                              <span className="w-fit text-[9px] font-black bg-rose-500 text-white px-1.5 rounded-full uppercase leading-tight">Struck Off</span>
                             )}
                           </div>
                         </td>
-                        <td className="px-6 py-4 text-center">
-                          <div className="flex justify-center space-x-2">
+                        <td className="px-3 sm:px-6 py-4 text-center">
+                          <div className="flex flex-wrap justify-center gap-2">
                             {['present', 'absent', 'leave'].map(status => (
                               <button
                                 key={status}
                                 onClick={() => handleStatusChange(student._id, status)}
-                                className={`px-4 py-1.5 rounded-md text-sm font-medium capitalize transition-all duration-200 ${attendanceMap[student._id] === status
+                                className={`px-3 sm:px-4 py-1.5 rounded-md text-xs sm:text-sm font-medium capitalize transition-all duration-200 ${attendanceMap[student._id] === status
                                   ? (status === 'present' ? 'bg-green-600 text-white shadow-md transform scale-105' :
                                     status === 'absent' ? 'bg-red-600 text-white shadow-md transform scale-105' :
                                       'bg-yellow-500 text-white shadow-md transform scale-105')
                                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                                   }`}
                               >
-                                {status}
+                                {status.charAt(0).toUpperCase()}
+                                <span className="hidden sm:inline">{status.slice(1)}</span>
                               </button>
                             ))}
                           </div>
@@ -297,11 +298,11 @@ function MarkAttendance() {
                   </tbody>
                 </table>
               </div>
-              <div className="p-6 border-t bg-gray-50 flex justify-end">
+              <div className="p-4 sm:p-6 border-t bg-gray-50 flex flex-col sm:flex-row justify-end">
                 <button
                   onClick={handleSubmit}
                   disabled={submitting}
-                  className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition shadow-lg disabled:opacity-50 font-bold text-lg flex items-center"
+                  className="w-full sm:w-auto bg-green-600 text-white px-8 py-4 sm:py-3 rounded-xl sm:rounded-lg hover:bg-green-700 transition shadow-lg disabled:opacity-50 font-bold text-lg flex items-center justify-center"
                 >
                   {submitting ? (
                     <>

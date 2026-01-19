@@ -44,7 +44,7 @@ function AboutPage() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative py-32 bg-govt-dark overflow-hidden">
-        <div className="absolute inset-0 bg-[url('../public/images/clg-4.jpeg')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('/images/clg-4.jpeg')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6">Our Legacy</h1>
           <p className="text-xl text-teal-50 max-w-2xl mx-auto font-medium">
@@ -85,7 +85,7 @@ function AboutPage() {
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl skew-y-3 hover:skew-y-0 transition-transform duration-700">
               <img
-                src='../public/images/clg-1.jpeg'
+                src='/images/clg-1.jpeg'
                 alt="College Campus"
                 className="w-full h-full object-cover"
               />

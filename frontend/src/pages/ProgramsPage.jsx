@@ -5,50 +5,62 @@ import Programs from '../components/Programs'
 function ProgramsPage() {
   const detailedPrograms = [
     {
-      title: "Bachelor of Arts (B.A.)",
-      duration: "3 Years",
-      description: "A comprehensive liberal arts program offering specializations in English, History, Political Science, Sociology, and Psychology. Designed to cultivate critical thinking and communication skills.",
-      courses: ["English Literature", "History", "Political Science", "Sociology", "Psychology", "Economics"],
+      title: "FSC Medical",
+      duration: "2 Years",
+      description: "A premier pre-medical program designed for students aiming for careers in medicine, dentistry, and allied health sciences. Our labs and faculty provide the best environment for biological and chemical studies.",
+      courses: ["Biology", "Chemistry", "Physics", "English", "Urdu", "Islamic Studies", "Pakistan Studies"],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+      ),
+      color: "rose"
+    },
+    {
+      title: "FSC Pre Engineering",
+      duration: "2 Years",
+      description: "Rigorous scientific training with an emphasis on mathematical analysis and physical principles, preparing students for top engineering universities and technical fields.",
+      courses: ["Mathematics", "Physics", "Chemistry", "English", "Urdu", "Islamic Studies", "Pakistan Studies"],
+      icon: (
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      color: "blue"
+    },
+    {
+      title: "FA",
+      duration: "2 Years",
+      description: "A versatile program in humanities and social sciences, focusing on critical thinking, literature, and political systems to build a strong foundation for future studies in law and arts.",
+      courses: ["English Literature", "Political Science", "History", "Civics", "Urdu", "Islamic Studies"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
         </svg>
       ),
-      color: "blue"
+      color: "amber"
     },
     {
-      title: "Bachelor of Science (B.Sc.)",
-      duration: "3 Years",
-      description: "Advanced scientific programs covering Physics, Chemistry, Mathematics, Biology, and Computer Science. Focused on research and practical analytical skills.",
-      courses: ["Physics", "Chemistry", "Mathematics", "Biology", "Computer Science", "Statistics"],
+      title: "FA IT",
+      duration: "2 Years",
+      description: "An innovative blend of traditional humanities and modern information technology, providing students with both soft skills and technical proficiency for the digital age.",
+      courses: ["Computer Science", "Economics", "English", "Urdu", "Islamic Studies", "Pakistan Studies"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
       color: "teal"
     },
     {
-      title: "Bachelor of Commerce (B.Com.)",
-      duration: "3 Years",
-      description: "Business and commerce education designed for the modern economy with focus on accounting, finance, and management.",
-      courses: ["Accounting", "Business Management", "Economics", "Finance", "Marketing", "Taxation"],
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      ),
-      color: "amber"
-    },
-    {
-      title: "Master of Science (M.Sc.)",
+      title: "ICS",
       duration: "2 Years",
-      description: "Advanced research-oriented programs in scientific disciplines, preparing scholars for high-level technical roles and PhD studies.",
-      courses: ["Physics", "Chemistry", "Mathematics", "Biology", "Computer Science"],
+      description: "Focused curriculum on computer science and informatics, designed for students aiming to enter the software industry, data science, or computer engineering fields.",
+      courses: ["Computer Science", "Mathematics", "Physics", "English", "Urdu", "Islamic Studies"],
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
         </svg>
       ),
       color: "purple"
@@ -59,7 +71,7 @@ function ProgramsPage() {
     <div className="bg-white">
       {/* Hero Header */}
       <section className="relative py-32 bg-gray-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('../public/images/clg-1.jpeg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/images/clg-1.jpeg')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold text-white mb-6 animate-fade-in-up">Academic Horizon</h1>

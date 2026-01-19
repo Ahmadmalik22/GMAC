@@ -15,7 +15,7 @@ const PrincipalMessage = () => {
                             {/* Main Image */}
                             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
                                 <img
-                                    src="../images/principal.png"
+                                    src="/images/principal.png"
                                     alt="College Principal"
                                     className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110"
                                 />

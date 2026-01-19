@@ -2,9 +2,9 @@ import React from 'react'
 
 function About() {
   const stats = [
-    { label: "Students", value: "5000+", icon: "👨‍🎓", color: "text-blue-600" },
-    { label: "Faculty", value: "200+", icon: "👨‍🏫", color: "text-emerald-600" },
-    { label: "Programs", value: "50+", icon: "📚", color: "text-purple-600" },
+    { label: "Students", value: "200+", icon: "👨‍🎓", color: "text-blue-600" },
+    { label: "Faculty", value: "20+", icon: "👨‍🏫", color: "text-emerald-600" },
+    { label: "Programs", value: "5", icon: "📚", color: "text-purple-600" },
     { label: "Years", value: "25+", icon: "🏛️", color: "text-amber-600" },
   ]
 

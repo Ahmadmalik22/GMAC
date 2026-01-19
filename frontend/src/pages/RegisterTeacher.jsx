@@ -116,7 +116,7 @@ function RegisterTeacher() {
 
       const result = await adminAPI.registerTeacher(teacherData)
 
-      if (result.success) {
+      if (result.data && result.data.success) {
         toast.success(`Teacher "${formData.firstName} ${formData.lastName}" registered successfully!`)
 
         // Reset form
